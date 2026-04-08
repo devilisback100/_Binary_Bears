@@ -1,12 +1,12 @@
 /* ============================================================
-   EVENTARA — UNIVERSAL THEME FILE
-   Yellow + Chocolate Design System
-   
+   EVENTARA — EMBER & GOLD THEME
+   Charcoal Black + Burnt Orange + Gold Design System
+
    Usage:
-     HTML  → <link rel="stylesheet" href="eventara-theme.css">
-     JS/TS → import './eventara-theme.css'
-     SCSS  → @use 'eventara-theme.css'
-   
+     HTML  → <link rel="stylesheet" href="eventara-ember-gold-theme.css">
+     JS/TS → import './eventara-ember-gold-theme.css'
+     SCSS  → @use 'eventara-ember-gold-theme.css'
+
    All tokens live on :root — accessible globally.
    Dark mode is automatic via @media (prefers-color-scheme: dark)
    or force with class `.dark` on <html> / <body>.
@@ -24,38 +24,48 @@
    ───────────────────────────────────────── */
 :root {
 
-    /* — Brand Core — */
-    --yellow-50: #FFFDE8;
-    --yellow-100: #FFF5B0;
-    --yellow-200: #FEEC70;
-    --yellow-300: #F5D842;
+    /* — Gold Ramp — */
+    --gold-50: #FFF8E7;
+    --gold-100: #FFEDB8;
+    --gold-200: #FFD966;
+    --gold-300: #F5C518;
     /* primary CTA */
-    --yellow-400: #E8C020;
-    --yellow-500: #C9A010;
-    --yellow-600: #9E7A08;
-    --yellow-700: #705605;
-    --yellow-800: #433303;
-    --yellow-900: #1E1601;
+    --gold-400: #D4A017;
+    --gold-500: #A87C0D;
+    --gold-600: #7A5608;
+    --gold-700: #4E3505;
+    --gold-800: #2A1C02;
+    --gold-900: #130D01;
 
-    --choco-50: #FBF3EC;
-    --choco-100: #F0D9C0;
-    --choco-200: #DEBB95;
-    --choco-300: #C09060;
-    --choco-400: #8C5E30;
-    --choco-500: #6B3E1A;
-    /* mid brown */
-    --choco-600: #4A2510;
-    /* card surface */
-    --choco-700: #321608;
-    /* deep bg layer */
-    --choco-800: #1E0D03;
-    /* darkest bg */
-    --choco-900: #0E0601;
+    /* — Ember (Burnt Orange) Ramp — */
+    --ember-50: #FFF0E6;
+    --ember-100: #FFDAB8;
+    --ember-200: #FFB37A;
+    --ember-300: #F07830;
+    /* secondary accent */
+    --ember-400: #C4581A;
+    --ember-500: #963E0E;
+    --ember-600: #6B2908;
+    --ember-700: #461904;
+    --ember-800: #250D02;
+    --ember-900: #110601;
+
+    /* — Charcoal Ramp — */
+    --charcoal-50: #F5F3F0;
+    --charcoal-100: #E0DCD5;
+    --charcoal-200: #BDB7AC;
+    --charcoal-300: #8C8478;
+    --charcoal-400: #605A50;
+    --charcoal-500: #443E36;
+    --charcoal-600: #2E2924;
+    --charcoal-700: #1E1A16;
+    --charcoal-800: #131009;
+    --charcoal-900: #090705;
 
     /* — Extended Palette — */
-    --amber-300: #FCA840;
-    --amber-500: #D4760A;
-    --amber-700: #7A3F04;
+    --amber-300: #FFB74D;
+    --amber-500: #E07B00;
+    --amber-700: #7A4200;
 
     --terracotta-300: #E8795A;
     --terracotta-500: #B84B2C;
@@ -68,12 +78,8 @@
     --sand-700: #5E4A30;
 
     --cream-50: #FFFDF8;
-    --cream-100: #FDF6E8;
-    --cream-200: #F7EACF;
-
-    --olive-300: #BEBC5A;
-    --olive-500: #7A7820;
-    --olive-700: #3E3D0A;
+    --cream-100: #FFF8E7;
+    --cream-200: #FFEDB8;
 
     --success-300: #6DCF8A;
     --success-500: #2E9E55;
@@ -88,37 +94,46 @@
     --info-700: #0D4278;
 
     /* — Semantic Surfaces (Light Mode) — */
-    --color-bg-base: var(--cream-50);
+    --color-bg-base: var(--charcoal-50);
     --color-bg-surface: #FFFFFF;
     --color-bg-elevated: var(--cream-100);
     --color-bg-sunken: var(--sand-100);
-    --color-bg-overlay: rgba(44, 22, 8, 0.08);
+    --color-bg-overlay: rgba(30, 26, 22, 0.08);
 
-    --color-bg-brand: var(--yellow-300);
-    --color-bg-brand-hover: var(--yellow-400);
-    --color-bg-brand-soft: var(--yellow-50);
+    --color-bg-brand: var(--gold-300);
+    --color-bg-brand-hover: var(--gold-400);
+    --color-bg-brand-soft: var(--gold-50);
 
-    --color-bg-dark: var(--choco-700);
-    --color-bg-dark-mid: var(--choco-600);
-    --color-bg-dark-card: var(--choco-500);
+    --color-bg-accent: var(--ember-300);
+    --color-bg-accent-hover: var(--ember-400);
+    --color-bg-accent-soft: var(--ember-50);
+
+    --color-bg-dark: var(--charcoal-700);
+    --color-bg-dark-mid: var(--charcoal-600);
+    --color-bg-dark-card: var(--charcoal-500);
 
     /* — Text — */
-    --color-text-primary: var(--choco-800);
-    --color-text-secondary: var(--choco-500);
+    --color-text-primary: var(--charcoal-800);
+    --color-text-secondary: var(--charcoal-500);
     --color-text-muted: var(--sand-500);
     --color-text-hint: var(--sand-300);
-    --color-text-on-brand: var(--choco-800);
-    /* text on yellow bg */
+    --color-text-on-brand: var(--charcoal-800);
+    /* text on gold bg */
+    --color-text-on-accent: #FFFFFF;
+    /* text on ember bg */
     --color-text-on-dark: var(--cream-100);
-    /* text on chocolate bg */
-    --color-text-brand: var(--yellow-500);
-    /* yellow text on light bg */
-    --color-text-link: var(--amber-500);
+    /* text on charcoal bg */
+    --color-text-brand: var(--gold-500);
+    /* gold text on light bg */
+    --color-text-accent: var(--ember-500);
+    /* ember text on light bg */
+    --color-text-link: var(--ember-500);
 
     /* — Borders — */
-    --color-border-default: rgba(74, 37, 16, 0.14);
-    --color-border-strong: rgba(74, 37, 16, 0.28);
-    --color-border-brand: var(--yellow-300);
+    --color-border-default: rgba(30, 26, 22, 0.14);
+    --color-border-strong: rgba(30, 26, 22, 0.28);
+    --color-border-brand: var(--gold-300);
+    --color-border-accent: var(--ember-300);
     --color-border-dark: rgba(255, 255, 255, 0.08);
 
     /* — Semantic States — */
@@ -134,15 +149,13 @@
     --color-info-text: var(--info-700);
     --color-info-border: var(--info-300);
 
-    --color-warning-bg: var(--yellow-50);
-    --color-warning-text: var(--yellow-700);
-    --color-warning-border: var(--yellow-200);
+    --color-warning-bg: var(--gold-50);
+    --color-warning-text: var(--gold-700);
+    --color-warning-border: var(--gold-200);
 
     /* — Typography — */
     --font-display: 'Syne', sans-serif;
-    /* headings, logo, display */
     --font-body: 'DM Sans', sans-serif;
-    /* body, UI, labels */
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
     --text-xs: 0.70rem;
@@ -204,13 +217,16 @@
     --radius-pill: 999px;
 
     /* — Shadows — */
-    --shadow-xs: 0 1px 2px rgba(44, 22, 8, 0.06);
-    --shadow-sm: 0 2px 8px rgba(44, 22, 8, 0.10);
-    --shadow-md: 0 4px 16px rgba(44, 22, 8, 0.14);
-    --shadow-lg: 0 8px 32px rgba(44, 22, 8, 0.18);
-    --shadow-xl: 0 16px 56px rgba(44, 22, 8, 0.22);
-    --shadow-brand: 0 4px 20px rgba(245, 216, 66, 0.35);
-    --shadow-dark: 0 4px 20px rgba(14, 6, 1, 0.50);
+    --shadow-xs: 0 1px 2px rgba(30, 26, 22, 0.06);
+    --shadow-sm: 0 2px 8px rgba(30, 26, 22, 0.10);
+    --shadow-md: 0 4px 16px rgba(30, 26, 22, 0.14);
+    --shadow-lg: 0 8px 32px rgba(30, 26, 22, 0.18);
+    --shadow-xl: 0 16px 56px rgba(30, 26, 22, 0.22);
+    --shadow-brand: 0 4px 20px rgba(245, 197, 24, 0.35);
+    /* gold glow */
+    --shadow-accent: 0 4px 20px rgba(240, 120, 48, 0.35);
+    /* ember glow */
+    --shadow-dark: 0 4px 20px rgba(9, 7, 5, 0.50);
 
     /* — Transitions — */
     --ease-default: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -245,22 +261,27 @@
    ───────────────────────────────────────── */
 @media (prefers-color-scheme: dark) {
     :root {
-        --color-bg-base: var(--choco-800);
-        --color-bg-surface: var(--choco-700);
-        --color-bg-elevated: var(--choco-600);
-        --color-bg-sunken: var(--choco-900);
+        --color-bg-base: var(--charcoal-800);
+        --color-bg-surface: var(--charcoal-700);
+        --color-bg-elevated: var(--charcoal-600);
+        --color-bg-sunken: var(--charcoal-900);
         --color-bg-overlay: rgba(0, 0, 0, 0.35);
 
-        --color-bg-brand: var(--yellow-300);
-        --color-bg-brand-hover: var(--yellow-200);
-        --color-bg-brand-soft: rgba(245, 216, 66, 0.12);
+        --color-bg-brand: var(--gold-300);
+        --color-bg-brand-hover: var(--gold-200);
+        --color-bg-brand-soft: rgba(245, 197, 24, 0.12);
+
+        --color-bg-accent: var(--ember-300);
+        --color-bg-accent-hover: var(--ember-200);
+        --color-bg-accent-soft: rgba(240, 120, 48, 0.12);
 
         --color-text-primary: var(--cream-100);
         --color-text-secondary: var(--sand-300);
         --color-text-muted: var(--sand-500);
         --color-text-hint: var(--sand-700);
-        --color-text-brand: var(--yellow-300);
-        --color-text-link: var(--amber-300);
+        --color-text-brand: var(--gold-300);
+        --color-text-accent: var(--ember-300);
+        --color-text-link: var(--ember-300);
 
         --color-border-default: rgba(255, 255, 255, 0.08);
         --color-border-strong: rgba(255, 255, 255, 0.16);
@@ -271,8 +292,8 @@
         --color-danger-text: var(--danger-300);
         --color-info-bg: rgba(40, 120, 199, 0.15);
         --color-info-text: var(--info-300);
-        --color-warning-bg: rgba(245, 216, 66, 0.12);
-        --color-warning-text: var(--yellow-200);
+        --color-warning-bg: rgba(245, 197, 24, 0.12);
+        --color-warning-text: var(--gold-200);
 
         --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.25);
         --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
@@ -285,22 +306,27 @@
 /* Force dark mode via class */
 .dark,
 [data-theme="dark"] {
-    --color-bg-base: var(--choco-800);
-    --color-bg-surface: var(--choco-700);
-    --color-bg-elevated: var(--choco-600);
-    --color-bg-sunken: var(--choco-900);
+    --color-bg-base: var(--charcoal-800);
+    --color-bg-surface: var(--charcoal-700);
+    --color-bg-elevated: var(--charcoal-600);
+    --color-bg-sunken: var(--charcoal-900);
     --color-bg-overlay: rgba(0, 0, 0, 0.35);
 
-    --color-bg-brand: var(--yellow-300);
-    --color-bg-brand-hover: var(--yellow-200);
-    --color-bg-brand-soft: rgba(245, 216, 66, 0.12);
+    --color-bg-brand: var(--gold-300);
+    --color-bg-brand-hover: var(--gold-200);
+    --color-bg-brand-soft: rgba(245, 197, 24, 0.12);
+
+    --color-bg-accent: var(--ember-300);
+    --color-bg-accent-hover: var(--ember-200);
+    --color-bg-accent-soft: rgba(240, 120, 48, 0.12);
 
     --color-text-primary: var(--cream-100);
     --color-text-secondary: var(--sand-300);
     --color-text-muted: var(--sand-500);
     --color-text-hint: var(--sand-700);
-    --color-text-brand: var(--yellow-300);
-    --color-text-link: var(--amber-300);
+    --color-text-brand: var(--gold-300);
+    --color-text-accent: var(--ember-300);
+    --color-text-link: var(--ember-300);
 
     --color-border-default: rgba(255, 255, 255, 0.08);
     --color-border-strong: rgba(255, 255, 255, 0.16);
@@ -311,23 +337,24 @@
     --color-danger-text: var(--danger-300);
     --color-info-bg: rgba(40, 120, 199, 0.15);
     --color-info-text: var(--info-300);
-    --color-warning-bg: rgba(245, 216, 66, 0.12);
-    --color-warning-text: var(--yellow-200);
+    --color-warning-bg: rgba(245, 197, 24, 0.12);
+    --color-warning-text: var(--gold-200);
 }
 
 /* Force light mode via class */
 .light,
 [data-theme="light"] {
-    --color-bg-base: var(--cream-50);
+    --color-bg-base: var(--charcoal-50);
     --color-bg-surface: #FFFFFF;
     --color-bg-elevated: var(--cream-100);
     --color-bg-sunken: var(--sand-100);
-    --color-text-primary: var(--choco-800);
-    --color-text-secondary: var(--choco-500);
+    --color-text-primary: var(--charcoal-800);
+    --color-text-secondary: var(--charcoal-500);
     --color-text-muted: var(--sand-500);
-    --color-text-brand: var(--yellow-500);
-    --color-border-default: rgba(74, 37, 16, 0.14);
-    --color-border-strong: rgba(74, 37, 16, 0.28);
+    --color-text-brand: var(--gold-500);
+    --color-text-accent: var(--ember-500);
+    --color-border-default: rgba(30, 26, 22, 0.14);
+    --color-border-strong: rgba(30, 26, 22, 0.28);
 }
 
 
@@ -480,6 +507,10 @@ a:hover {
 
 .text-brand {
     color: var(--color-text-brand);
+}
+
+.text-accent {
+    color: var(--color-text-accent);
 }
 
 .text-on-dark {
@@ -662,6 +693,10 @@ h6 {
     background: var(--color-bg-brand);
 }
 
+.surface-accent {
+    background: var(--color-bg-accent);
+}
+
 
 /* ─────────────────────────────────────────
    9. CARD
@@ -695,6 +730,12 @@ h6 {
     background: var(--color-bg-brand);
     border-color: transparent;
     color: var(--color-text-on-brand);
+}
+
+.card-accent {
+    background: var(--color-bg-accent);
+    border-color: transparent;
+    color: var(--color-text-on-accent);
 }
 
 .card-hoverable:hover {
@@ -737,7 +778,7 @@ h6 {
     cursor: not-allowed;
 }
 
-/* Primary — Yellow */
+/* Primary — Gold */
 .btn-primary {
     background: var(--color-bg-brand);
     color: var(--color-text-on-brand);
@@ -751,23 +792,22 @@ h6 {
     box-shadow: var(--shadow-brand), 0 2px 8px rgba(0, 0, 0, 0.12);
     text-decoration: none;
 }
-.select {
-    width: 100%;
-    min-height: 48px;
-    padding: 0 14px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--color-border-default);
-    background: var(--color-bg-surface);
-    color: var(--color-text-primary);
-    font: inherit;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+/* Accent — Ember Orange */
+.btn-accent {
+    background: var(--color-bg-accent);
+    color: var(--color-text-on-accent);
+    border-color: var(--color-bg-accent);
+    box-shadow: var(--shadow-accent);
 }
 
-.select:focus {
-    outline: none;
-    border-color: var(--yellow-500);
-    box-shadow: 0 0 0 4px rgba(245, 216, 66, 0.15);
+.btn-accent:hover {
+    background: var(--color-bg-accent-hover);
+    border-color: var(--color-bg-accent-hover);
+    box-shadow: var(--shadow-accent), 0 2px 8px rgba(0, 0, 0, 0.12);
+    text-decoration: none;
 }
+
 /* Secondary — Outlined */
 .btn-secondary {
     background: transparent;
@@ -795,13 +835,13 @@ h6 {
 
 /* Dark */
 .btn-dark {
-    background: var(--choco-700);
+    background: var(--charcoal-700);
     color: var(--cream-100);
-    border-color: var(--choco-600);
+    border-color: var(--charcoal-600);
 }
 
 .btn-dark:hover {
-    background: var(--choco-600);
+    background: var(--charcoal-600);
     text-decoration: none;
 }
 
@@ -844,28 +884,28 @@ h6 {
 }
 
 .badge-brand {
-    background: var(--yellow-100);
-    color: var(--yellow-700);
+    background: var(--gold-100);
+    color: var(--gold-700);
+}
+
+.badge-accent {
+    background: rgba(240, 120, 48, 0.18);
+    color: var(--ember-600);
 }
 
 .badge-dark {
-    background: var(--choco-600);
+    background: var(--charcoal-600);
     color: var(--cream-100);
 }
 
 .badge-amber {
-    background: rgba(252, 168, 64, 0.18);
+    background: rgba(255, 183, 77, 0.18);
     color: var(--amber-700);
 }
 
 .badge-terra {
     background: rgba(232, 121, 90, 0.18);
     color: var(--terracotta-700);
-}
-
-.badge-olive {
-    background: rgba(190, 188, 90, 0.18);
-    color: var(--olive-700);
 }
 
 .badge-success {
@@ -938,12 +978,12 @@ h6 {
 .input:focus,
 .select:focus,
 .textarea:focus {
-    border-color: var(--yellow-400);
-    box-shadow: 0 0 0 3px rgba(245, 216, 66, 0.25);
+    border-color: var(--gold-400);
+    box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.25);
 }
 
 .input-dark {
-    background: var(--choco-600);
+    background: var(--charcoal-600);
     border-color: rgba(255, 255, 255, 0.08);
     color: var(--cream-100);
 }
@@ -953,8 +993,26 @@ h6 {
 }
 
 .input-dark:focus {
-    border-color: var(--yellow-400);
-    box-shadow: 0 0 0 3px rgba(245, 216, 66, 0.15);
+    border-color: var(--gold-400);
+    box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.15);
+}
+
+.select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-default);
+    background: var(--color-bg-surface);
+    color: var(--color-text-primary);
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.select:focus {
+    outline: none;
+    border-color: var(--gold-500);
+    box-shadow: 0 0 0 4px rgba(245, 197, 24, 0.15);
 }
 
 .label {
@@ -984,19 +1042,6 @@ h6 {
 }
 
 /* Checkbox & Radio */
-.checkbox {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-}
-
-.checkbox input {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--yellow-500);
-}
 .checkbox,
 .radio {
     display: inline-flex;
@@ -1004,13 +1049,14 @@ h6 {
     gap: var(--space-3);
     cursor: pointer;
     font-size: var(--text-sm);
+    color: var(--color-text-secondary);
 }
 
 .checkbox input[type="checkbox"],
 .radio input[type="radio"] {
     width: 18px;
     height: 18px;
-    accent-color: var(--yellow-400);
+    accent-color: var(--gold-400);
     cursor: pointer;
 }
 
@@ -1039,12 +1085,16 @@ h6 {
 }
 
 .navbar-dark {
-    background: var(--choco-800);
+    background: var(--charcoal-800);
     border-bottom-color: var(--color-border-dark);
 }
 
-.navbar-brand-yellow {
-    color: var(--yellow-300);
+.navbar-brand-gold {
+    color: var(--gold-300);
+}
+
+.navbar-brand-ember {
+    color: var(--ember-300);
 }
 
 .nav-link {
@@ -1064,7 +1114,7 @@ h6 {
 }
 
 .nav-link.active {
-    color: var(--yellow-500);
+    color: var(--gold-500);
     background: var(--color-bg-brand-soft);
 }
 
@@ -1095,7 +1145,7 @@ h6 {
 }
 
 .stat-card-dark {
-    background: var(--choco-600);
+    background: var(--charcoal-600);
     border-color: rgba(255, 255, 255, 0.06);
 }
 
@@ -1103,8 +1153,12 @@ h6 {
     font-family: var(--font-display);
     font-size: var(--text-4xl);
     font-weight: var(--weight-bold);
-    color: var(--yellow-400);
+    color: var(--gold-400);
     line-height: 1;
+}
+
+.stat-value-ember {
+    color: var(--ember-400);
 }
 
 .stat-label {
@@ -1151,12 +1205,17 @@ h6 {
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-pill);
-    background: var(--yellow-100);
-    color: var(--yellow-700);
+    background: var(--gold-100);
+    color: var(--gold-700);
     font-family: var(--font-display);
     font-weight: var(--weight-bold);
     font-size: var(--text-sm);
     flex-shrink: 0;
+}
+
+.avatar-initials-ember {
+    background: var(--ember-100);
+    color: var(--ember-700);
 }
 
 
@@ -1195,6 +1254,18 @@ h6 {
     background: var(--color-warning-bg);
     color: var(--color-warning-text);
     border-color: var(--color-warning-border);
+}
+
+.alert-brand {
+    background: var(--color-bg-brand-soft);
+    color: var(--gold-700);
+    border-color: var(--gold-200);
+}
+
+.alert-accent {
+    background: var(--color-bg-accent-soft);
+    color: var(--ember-600);
+    border-color: var(--ember-200);
 }
 
 
@@ -1312,16 +1383,6 @@ h6 {
 /* ─────────────────────────────────────────
    20. RESPONSIVE BREAKPOINTS
    ───────────────────────────────────────── */
-/*
-  Use these as reference in your own media queries:
-
-  sm:  @media (min-width: 540px)   — large phones
-  md:  @media (min-width: 768px)   — tablets
-  lg:  @media (min-width: 1024px)  — small desktops
-  xl:  @media (min-width: 1280px)  — large desktops
-  2xl: @media (min-width: 1536px)  — wide screens
-*/
-
 @media (max-width: 768px) {
 
     .grid-2,
@@ -1363,5 +1424,37 @@ h6 {
     .btn-xl {
         padding: var(--space-4) var(--space-6);
         font-size: var(--text-base);
+    }
+}
+
+
+/* ─────────────────────────────────────────
+   21. SPINNER / AUTH LOADING
+   ───────────────────────────────────────── */
+.auth-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--color-bg-base);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-border-default);
+    border-top: 3px solid var(--gold-400);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }

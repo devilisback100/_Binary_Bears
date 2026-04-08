@@ -19,16 +19,16 @@ function HomePage() {
 
     useEffect(() => {
         const loadHome = async () => {
+            setLoading(true);
             try {
                 const [teamRes, eventRes, projectRes] = await Promise.all([
                     getTeamMembers(),
-                    getEvents({ type: "upcoming" }),
+                    getEvents({ type: "upcoming" }), // Fixed type
                     getProjects(),
                 ]);
-
-                setTeam(teamRes?.data || []);
-                setEvents(eventRes?.data || []);
-                setProjects(projectRes?.data || []);
+                setTeam(teamRes || []);
+                setEvents(eventRes || []);
+                setProjects(projectRes || []);
             } catch (error) {
                 console.error("Failed to load homepage data", error);
             } finally {

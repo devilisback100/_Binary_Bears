@@ -1,83 +1,105 @@
-import React, { createContext, useEffect, useMemo, useState } from "react";
-import { getCurrentUser, loginUser, signupUser } from "../services/authService";
-import {
-    getStoredToken,
-    getStoredUser,
-    setStoredAuth,
-    clearStoredAuth,
-} from "../utils/storage";
+import { createContext, useContext, useState, useEffect } from "react";
+import { loginUser, signupUser, getCurrentUser } from "../services/authService";
 
-export const AuthContext = createContext(null);
+export const AuthContext = createContext();
+
+export function useAuth() {
+    const context = useContext(AuthContext);
+    if (!context) {
+        throw new Error("useAuth must be used within AuthProvider");
+    }
+    return context;
+}
 
 export function AuthProvider({ children }) {
-    const [token, setToken] = useState(getStoredToken());
-    const [user, setUser] = useState(getStoredUser());
-    const [loading, setLoading] = useState(!!getStoredToken());
+    const [user, setUser] = useState(null);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [loading, setLoading] = useState(true);
 
+    // ✅ CRITICAL: Restore auth on EVERY page load
     useEffect(() => {
-        const initAuth = async () => {
-            const savedToken = getStoredToken();
-            if (!savedToken) {
-                setLoading(false);
-                return;
-            }
+        const token = localStorage.getItem("token");
 
-            try {
-                const res = await getCurrentUser();
-                setUser(res.data);
-            } catch (error) {
-                clearStoredAuth();
-                setToken(null);
-                setUser(null);
-            } finally {
-                setLoading(false);
-            }
-        };
+        if (token) {
+            // Try to restore user from token
+            const restoreUser = async () => {
+                try {
+                    const userData = await getCurrentUser();
+                    setUser(userData);
+                    setIsAuthenticated(true);
+                } catch (error) {
+                    // Token invalid/expired → clear it
+                    localStorage.removeItem("token");
+                    setUser(null);
+                    setIsAuthenticated(false);
+                } finally {
+                    setLoading(false);
+                }
+            };
 
-        initAuth();
+            restoreUser();
+        } else {
+            setUser(null);
+            setIsAuthenticated(false);
+            setLoading(false);
+        }
     }, []);
 
     const login = async (credentials) => {
         try {
-            const { token, data: user } = await loginUser(credentials);
+            const { token, data: userData } = await loginUser(credentials);
             localStorage.setItem("token", token);
-            setUser(user);
-            setToken(token);
+            setUser(userData);
+            setIsAuthenticated(true);
+            return { success: true };
         } catch (error) {
-            throw new Error(error?.response?.data?.error || "Login failed");
+            localStorage.removeItem("token");
+            setUser(null);
+            setIsAuthenticated(false);
+            throw new Error(error?.response?.data?.message || "Login failed");
         }
     };
 
     const signup = async (userData) => {
         try {
-            const { token, data: user } = await signupUser(userData);
+            const { token, data: userDataResponse } = await signupUser(userData);
             localStorage.setItem("token", token);
-            setUser(user);
-            setToken(token);
+            setUser(userDataResponse);
+            setIsAuthenticated(true);
+            return { success: true };
         } catch (error) {
-            throw new Error(error?.response?.data?.error || "Signup failed");
+            localStorage.removeItem("token");
+            throw new Error(error?.response?.data?.message || "Signup failed");
         }
     };
 
     const logout = () => {
-        clearStoredAuth();
-        setToken(null);
+        localStorage.removeItem("token");
         setUser(null);
+        setIsAuthenticated(false);
     };
 
-    const value = useMemo(
-        () => ({
-            token,
-            user,
-            loading,
-            isAuthenticated: !!token,
-            login,
-            signup,
-            logout,
-            setUser,
-        }),
-        [token, user, loading]
-    );
+    // Show loading spinner until auth restored
+    if (loading) {
+        return (
+            <div className="auth-loading">
+                <div className="spinner"></div>
+                <p>Checking authentication...</p>
+            </div>
+        );
+    }
 
-    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+    return (
+        <AuthContext.Provider
+            value={{
+                user,
+                isAuthenticated,
+                login,
+                signup,
+                logout
+            }}
+        >
+            {children}
+        </AuthContext.Provider>
+    );
 }
