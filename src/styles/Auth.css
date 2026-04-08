@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500&display=swap');
+
+/* ── Page shell ── */
+.auth-page {
+    min-height: 100vh;
+    background: #0a0a0f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+}
+
+.auth-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse 55% 45% at 15% 50%, rgba(74, 47, 160, 0.14) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 55% at 85% 20%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.auth-page__section {
+    width: 100%;
+    padding: 4rem 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.auth-page__section .container {
+    display: flex;
+    justify-content: center;
+}
+
+/* ── Shell + card ── */
+.auth-shell {
+    width: 100%;
+    max-width: 440px;
+}
+
+.auth-card {
+    background: #111118;
+    border: 1px solid rgba(201, 168, 76, 0.14);
+    border-radius: 4px;
+    padding: 2.5rem;
+    animation: auth-enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes auth-enter {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Heading ── */
+.auth-card h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: #f0eaff;
+    letter-spacing: 0.03em;
+    line-height: 1.3;
+}
+
+.auth-card p {
+    font-size: 0.85rem;
+    color: #9b92b8;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* ── Badge ── */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.65rem;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.badge-brand {
+    background: rgba(201, 168, 76, 0.1);
+    color: #c9a84c;
+    border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+/* ── Alert ── */
+.alert-danger {
+    padding: 0.7rem 1rem;
+    border-radius: 2px;
+    font-size: 0.8rem;
+    background: rgba(180, 40, 40, 0.1);
+    color: #f08080;
+    border: 1px solid rgba(180, 40, 40, 0.22);
+    line-height: 1.5;
+}
+
+/* ── Form ── */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9b92b8;
+}
+
+.input {
+    width: 100%;
+    height: 42px;
+    padding: 0 0.9rem;
+    background: #0a0a0f;
+    border: 1px solid rgba(201, 168, 76, 0.14);
+    border-radius: 2px;
+    color: #f0eaff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input::placeholder {
+    color: #5a5470;
+}
+
+.input:focus {
+    border-color: rgba(201, 168, 76, 0.4);
+    box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.06);
+}
+
+.field-hint {
+    font-size: 0.72rem;
+    color: #5a5470;
+    font-weight: 300;
+}
+
+/* ── Submit ── */
+.auth-submit {
+    width: 100%;
+    justify-content: center;
+    height: 44px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+}
+
+.btn-primary {
+    background: #c9a84c;
+    color: #0a0a0f;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.25rem;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #e8c96a;
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Switch link ── */
+.auth-switch {
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.auth-switch a {
+    color: #c9a84c;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.auth-switch a:hover {
+    color: #e8c96a;
+}
+
+/* ── Stack / helpers ── */
+.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.stack-2 {
+    gap: 0.5rem;
+}
+
+.stack-4 {
+    gap: 1.25rem;
+}
+
+.text-sm {
+    font-size: 0.8rem;
+}
+
+.text-secondary {
+    color: #9b92b8;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .auth-page__section {
+        padding: 2rem 1rem;
+    }
+}
