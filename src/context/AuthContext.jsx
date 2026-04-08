@@ -37,28 +37,26 @@ export function AuthProvider({ children }) {
         initAuth();
     }, []);
 
-    const login = async (payload) => {
-        const res = await loginUser(payload);
-        const authUser = res.data;
-        const authToken = res.token;
-
-        setToken(authToken);
-        setUser(authUser);
-        setStoredAuth(authToken, authUser);
-
-        return res;
+    const login = async (credentials) => {
+        try {
+            const { token, data: user } = await loginUser(credentials);
+            localStorage.setItem("token", token);
+            setUser(user);
+            setToken(token);
+        } catch (error) {
+            throw new Error(error?.response?.data?.error || "Login failed");
+        }
     };
 
-    const signup = async (payload) => {
-        const res = await signupUser(payload);
-        const authUser = res.data;
-        const authToken = res.token;
-
-        setToken(authToken);
-        setUser(authUser);
-        setStoredAuth(authToken, authUser);
-
-        return res;
+    const signup = async (userData) => {
+        try {
+            const { token, data: user } = await signupUser(userData);
+            localStorage.setItem("token", token);
+            setUser(user);
+            setToken(token);
+        } catch (error) {
+            throw new Error(error?.response?.data?.error || "Signup failed");
+        }
     };
 
     const logout = () => {

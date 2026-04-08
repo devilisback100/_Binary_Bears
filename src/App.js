@@ -1,31 +1,21 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
 import MainLayout from "./components/layout/MainLayout";
 import HomePage from "./pages/HomePage";
 import TeamPage from "./pages/TeamPage";
 import EventsPage from "./pages/EventsPage";
+import EventDetailPage from "./pages/EventDetailPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import ProjectDetailPage from "./pages/ProjectDetailPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import EventDetailPage from "./pages/EventDetailPage";
-import ProjectDetailPage from "./pages/ProjectDetailPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import useScrollToTop from "./hooks/useScrollToTop";
-import "./styles/theme.css";
-import "./styles/global.css";
-import "./styles/pages.css";
-
-function ScrollToTopHandler() {
-  useScrollToTop();
-  return null;
-}
+import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <ScrollToTopHandler />
+    <BrowserRouter>
+      <AuthProvider>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<HomePage />} />
@@ -39,8 +29,8 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

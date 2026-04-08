@@ -63,10 +63,10 @@ function Navbar() {
                                     </div>
                                 </div>
 
-                                <button className="btn btn-secondary" onClick={() => navigate("/")}>
+                                <span className="btn btn-secondary btn-disabled" aria-disabled="true">
                                     <User size={16} />
-                                    Profile
-                                </button>
+                                    Member
+                                </span>
 
                                 <button className="btn btn-primary" onClick={handleLogout}>
                                     <LogOut size={16} />

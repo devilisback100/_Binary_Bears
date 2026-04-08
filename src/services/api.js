@@ -1,20 +1,31 @@
 import axios from "axios";
-import { getStoredToken } from "../utils/storage";
-import { API_BASE_URL } from "../utils/constants";
 
 const api = axios.create({
-    baseURL: API_BASE_URL,
-    headers: {
-        "Content-Type": "application/json",
-    },
+    baseURL: process.env.REACT_APP_API_BASE_URL,
 });
 
-api.interceptors.request.use((config) => {
-    const token = getStoredToken();
-    if (token) {
-        config.headers.Authorization = `Bearer ${token}`;
+// Request interceptor
+api.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem("token");
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => Promise.reject(error)
+);
+
+// Response interceptor
+api.interceptors.response.use(
+    (response) => response.data, // unwrap {success, data} → just data
+    (error) => {
+        if (error.response?.status === 401) {
+            localStorage.removeItem("token");
+            window.location.href = "/login";
+        }
+        return Promise.reject(error);
     }
-    return config;
-});
+);
 
 export default api;

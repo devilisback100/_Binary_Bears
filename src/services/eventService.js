@@ -1,16 +1,5 @@
 import api from "./api";
 
-export async function getEvents(params = {}) {
-    const response = await api.get("/events", { params });
-    return response.data;
-}
-
-export async function getEventById(id) {
-    const response = await api.get(`/events/${id}`);
-    return response.data;
-}
-
-export async function registerForEvent(id) {
-    const response = await api.post(`/events/${id}/register`);
-    return response.data;
-}
+export const getEvents = (params = {}) => api.get("/events", { params });
+export const getEventById = (id) => api.get(`/events/${id}`);
+export const registerForEvent = (id) => api.post(`/events/${id}/register`);

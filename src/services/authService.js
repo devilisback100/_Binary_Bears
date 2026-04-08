@@ -1,16 +1,5 @@
 import api from "./api";
 
-export async function signupUser(payload) {
-    const response = await api.post("/auth/signup", payload);
-    return response.data;
-}
-
-export async function loginUser(payload) {
-    const response = await api.post("/auth/login", payload);
-    return response.data;
-}
-
-export async function getCurrentUser() {
-    const response = await api.get("/auth/me");
-    return response.data;
-}
+export const loginUser = (payload) => api.post("/auth/login", payload);
+export const signupUser = (payload) => api.post("/auth/signup", payload);
+export const getCurrentUser = () => api.get("/auth/me");

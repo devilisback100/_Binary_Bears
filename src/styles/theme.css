@@ -1,0 +1,1367 @@
+/* ============================================================
+   EVENTARA — UNIVERSAL THEME FILE
+   Yellow + Chocolate Design System
+   
+   Usage:
+     HTML  → <link rel="stylesheet" href="eventara-theme.css">
+     JS/TS → import './eventara-theme.css'
+     SCSS  → @use 'eventara-theme.css'
+   
+   All tokens live on :root — accessible globally.
+   Dark mode is automatic via @media (prefers-color-scheme: dark)
+   or force with class `.dark` on <html> / <body>.
+   ============================================================ */
+
+
+/* ─────────────────────────────────────────
+   1. GOOGLE FONTS
+   ───────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+
+/* ─────────────────────────────────────────
+   2. DESIGN TOKENS (Light Mode Default)
+   ───────────────────────────────────────── */
+:root {
+
+    /* — Brand Core — */
+    --yellow-50: #FFFDE8;
+    --yellow-100: #FFF5B0;
+    --yellow-200: #FEEC70;
+    --yellow-300: #F5D842;
+    /* primary CTA */
+    --yellow-400: #E8C020;
+    --yellow-500: #C9A010;
+    --yellow-600: #9E7A08;
+    --yellow-700: #705605;
+    --yellow-800: #433303;
+    --yellow-900: #1E1601;
+
+    --choco-50: #FBF3EC;
+    --choco-100: #F0D9C0;
+    --choco-200: #DEBB95;
+    --choco-300: #C09060;
+    --choco-400: #8C5E30;
+    --choco-500: #6B3E1A;
+    /* mid brown */
+    --choco-600: #4A2510;
+    /* card surface */
+    --choco-700: #321608;
+    /* deep bg layer */
+    --choco-800: #1E0D03;
+    /* darkest bg */
+    --choco-900: #0E0601;
+
+    /* — Extended Palette — */
+    --amber-300: #FCA840;
+    --amber-500: #D4760A;
+    --amber-700: #7A3F04;
+
+    --terracotta-300: #E8795A;
+    --terracotta-500: #B84B2C;
+    --terracotta-700: #6B2112;
+
+    --sand-100: #FAF3E4;
+    --sand-200: #F0E2C8;
+    --sand-300: #DEC8A0;
+    --sand-500: #A88B60;
+    --sand-700: #5E4A30;
+
+    --cream-50: #FFFDF8;
+    --cream-100: #FDF6E8;
+    --cream-200: #F7EACF;
+
+    --olive-300: #BEBC5A;
+    --olive-500: #7A7820;
+    --olive-700: #3E3D0A;
+
+    --success-300: #6DCF8A;
+    --success-500: #2E9E55;
+    --success-700: #155E30;
+
+    --danger-300: #F07070;
+    --danger-500: #C73535;
+    --danger-700: #7A1818;
+
+    --info-300: #70B8F0;
+    --info-500: #2878C7;
+    --info-700: #0D4278;
+
+    /* — Semantic Surfaces (Light Mode) — */
+    --color-bg-base: var(--cream-50);
+    --color-bg-surface: #FFFFFF;
+    --color-bg-elevated: var(--cream-100);
+    --color-bg-sunken: var(--sand-100);
+    --color-bg-overlay: rgba(44, 22, 8, 0.08);
+
+    --color-bg-brand: var(--yellow-300);
+    --color-bg-brand-hover: var(--yellow-400);
+    --color-bg-brand-soft: var(--yellow-50);
+
+    --color-bg-dark: var(--choco-700);
+    --color-bg-dark-mid: var(--choco-600);
+    --color-bg-dark-card: var(--choco-500);
+
+    /* — Text — */
+    --color-text-primary: var(--choco-800);
+    --color-text-secondary: var(--choco-500);
+    --color-text-muted: var(--sand-500);
+    --color-text-hint: var(--sand-300);
+    --color-text-on-brand: var(--choco-800);
+    /* text on yellow bg */
+    --color-text-on-dark: var(--cream-100);
+    /* text on chocolate bg */
+    --color-text-brand: var(--yellow-500);
+    /* yellow text on light bg */
+    --color-text-link: var(--amber-500);
+
+    /* — Borders — */
+    --color-border-default: rgba(74, 37, 16, 0.14);
+    --color-border-strong: rgba(74, 37, 16, 0.28);
+    --color-border-brand: var(--yellow-300);
+    --color-border-dark: rgba(255, 255, 255, 0.08);
+
+    /* — Semantic States — */
+    --color-success-bg: #E8F8EE;
+    --color-success-text: var(--success-700);
+    --color-success-border: var(--success-300);
+
+    --color-danger-bg: #FDEAEA;
+    --color-danger-text: var(--danger-700);
+    --color-danger-border: var(--danger-300);
+
+    --color-info-bg: #E8F3FD;
+    --color-info-text: var(--info-700);
+    --color-info-border: var(--info-300);
+
+    --color-warning-bg: var(--yellow-50);
+    --color-warning-text: var(--yellow-700);
+    --color-warning-border: var(--yellow-200);
+
+    /* — Typography — */
+    --font-display: 'Syne', sans-serif;
+    /* headings, logo, display */
+    --font-body: 'DM Sans', sans-serif;
+    /* body, UI, labels */
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    --text-xs: 0.70rem;
+    /* 11px */
+    --text-sm: 0.813rem;
+    /* 13px */
+    --text-base: 1rem;
+    /* 16px */
+    --text-md: 1.063rem;
+    /* 17px */
+    --text-lg: 1.188rem;
+    /* 19px */
+    --text-xl: 1.375rem;
+    /* 22px */
+    --text-2xl: 1.625rem;
+    /* 26px */
+    --text-3xl: 2rem;
+    /* 32px */
+    --text-4xl: 2.5rem;
+    /* 40px */
+    --text-5xl: 3.25rem;
+    /* 52px */
+
+    --weight-light: 300;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    --leading-tight: 1.2;
+    --leading-snug: 1.4;
+    --leading-normal: 1.6;
+    --leading-loose: 1.8;
+
+    --tracking-tight: -0.03em;
+    --tracking-normal: 0em;
+    --tracking-wide: 0.04em;
+    --tracking-widest: 0.12em;
+
+    /* — Spacing — */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+
+    /* — Radii — */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 18px;
+    --radius-2xl: 24px;
+    --radius-pill: 999px;
+
+    /* — Shadows — */
+    --shadow-xs: 0 1px 2px rgba(44, 22, 8, 0.06);
+    --shadow-sm: 0 2px 8px rgba(44, 22, 8, 0.10);
+    --shadow-md: 0 4px 16px rgba(44, 22, 8, 0.14);
+    --shadow-lg: 0 8px 32px rgba(44, 22, 8, 0.18);
+    --shadow-xl: 0 16px 56px rgba(44, 22, 8, 0.22);
+    --shadow-brand: 0 4px 20px rgba(245, 216, 66, 0.35);
+    --shadow-dark: 0 4px 20px rgba(14, 6, 1, 0.50);
+
+    /* — Transitions — */
+    --ease-default: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+    --duration-fast: 120ms;
+    --duration-normal: 220ms;
+    --duration-slow: 380ms;
+
+    /* — Z-index Scale — */
+    --z-below: -1;
+    --z-base: 0;
+    --z-raised: 10;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-overlay: 300;
+    --z-modal: 400;
+    --z-toast: 500;
+
+    /* — Layout — */
+    --container-sm: 540px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1280px;
+    --container-2xl: 1536px;
+}
+
+
+/* ─────────────────────────────────────────
+   3. DARK MODE OVERRIDES
+   ───────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg-base: var(--choco-800);
+        --color-bg-surface: var(--choco-700);
+        --color-bg-elevated: var(--choco-600);
+        --color-bg-sunken: var(--choco-900);
+        --color-bg-overlay: rgba(0, 0, 0, 0.35);
+
+        --color-bg-brand: var(--yellow-300);
+        --color-bg-brand-hover: var(--yellow-200);
+        --color-bg-brand-soft: rgba(245, 216, 66, 0.12);
+
+        --color-text-primary: var(--cream-100);
+        --color-text-secondary: var(--sand-300);
+        --color-text-muted: var(--sand-500);
+        --color-text-hint: var(--sand-700);
+        --color-text-brand: var(--yellow-300);
+        --color-text-link: var(--amber-300);
+
+        --color-border-default: rgba(255, 255, 255, 0.08);
+        --color-border-strong: rgba(255, 255, 255, 0.16);
+
+        --color-success-bg: rgba(45, 158, 85, 0.15);
+        --color-success-text: var(--success-300);
+        --color-danger-bg: rgba(199, 53, 53, 0.15);
+        --color-danger-text: var(--danger-300);
+        --color-info-bg: rgba(40, 120, 199, 0.15);
+        --color-info-text: var(--info-300);
+        --color-warning-bg: rgba(245, 216, 66, 0.12);
+        --color-warning-text: var(--yellow-200);
+
+        --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.25);
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+        --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.55);
+        --shadow-xl: 0 16px 56px rgba(0, 0, 0, 0.65);
+    }
+}
+
+/* Force dark mode via class */
+.dark,
+[data-theme="dark"] {
+    --color-bg-base: var(--choco-800);
+    --color-bg-surface: var(--choco-700);
+    --color-bg-elevated: var(--choco-600);
+    --color-bg-sunken: var(--choco-900);
+    --color-bg-overlay: rgba(0, 0, 0, 0.35);
+
+    --color-bg-brand: var(--yellow-300);
+    --color-bg-brand-hover: var(--yellow-200);
+    --color-bg-brand-soft: rgba(245, 216, 66, 0.12);
+
+    --color-text-primary: var(--cream-100);
+    --color-text-secondary: var(--sand-300);
+    --color-text-muted: var(--sand-500);
+    --color-text-hint: var(--sand-700);
+    --color-text-brand: var(--yellow-300);
+    --color-text-link: var(--amber-300);
+
+    --color-border-default: rgba(255, 255, 255, 0.08);
+    --color-border-strong: rgba(255, 255, 255, 0.16);
+
+    --color-success-bg: rgba(45, 158, 85, 0.15);
+    --color-success-text: var(--success-300);
+    --color-danger-bg: rgba(199, 53, 53, 0.15);
+    --color-danger-text: var(--danger-300);
+    --color-info-bg: rgba(40, 120, 199, 0.15);
+    --color-info-text: var(--info-300);
+    --color-warning-bg: rgba(245, 216, 66, 0.12);
+    --color-warning-text: var(--yellow-200);
+}
+
+/* Force light mode via class */
+.light,
+[data-theme="light"] {
+    --color-bg-base: var(--cream-50);
+    --color-bg-surface: #FFFFFF;
+    --color-bg-elevated: var(--cream-100);
+    --color-bg-sunken: var(--sand-100);
+    --color-text-primary: var(--choco-800);
+    --color-text-secondary: var(--choco-500);
+    --color-text-muted: var(--sand-500);
+    --color-text-brand: var(--yellow-500);
+    --color-border-default: rgba(74, 37, 16, 0.14);
+    --color-border-strong: rgba(74, 37, 16, 0.28);
+}
+
+
+/* ─────────────────────────────────────────
+   4. BASE RESET & GLOBAL STYLES
+   ───────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    line-height: var(--leading-normal);
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+a {
+    color: var(--color-text-link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* ─────────────────────────────────────────
+   5. TYPOGRAPHY UTILITY CLASSES
+   ───────────────────────────────────────── */
+.font-display {
+    font-family: var(--font-display);
+}
+
+.font-body {
+    font-family: var(--font-body);
+}
+
+.font-mono {
+    font-family: var(--font-mono);
+}
+
+.text-xs {
+    font-size: var(--text-xs);
+}
+
+.text-sm {
+    font-size: var(--text-sm);
+}
+
+.text-base {
+    font-size: var(--text-base);
+}
+
+.text-lg {
+    font-size: var(--text-lg);
+}
+
+.text-xl {
+    font-size: var(--text-xl);
+}
+
+.text-2xl {
+    font-size: var(--text-2xl);
+}
+
+.text-3xl {
+    font-size: var(--text-3xl);
+}
+
+.text-4xl {
+    font-size: var(--text-4xl);
+}
+
+.text-5xl {
+    font-size: var(--text-5xl);
+}
+
+.weight-light {
+    font-weight: var(--weight-light);
+}
+
+.weight-regular {
+    font-weight: var(--weight-regular);
+}
+
+.weight-medium {
+    font-weight: var(--weight-medium);
+}
+
+.weight-semibold {
+    font-weight: var(--weight-semibold);
+}
+
+.weight-bold {
+    font-weight: var(--weight-bold);
+}
+
+.tracking-tight {
+    letter-spacing: var(--tracking-tight);
+}
+
+.tracking-wide {
+    letter-spacing: var(--tracking-wide);
+}
+
+.tracking-widest {
+    letter-spacing: var(--tracking-widest);
+}
+
+.text-primary {
+    color: var(--color-text-primary);
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+.text-brand {
+    color: var(--color-text-brand);
+}
+
+.text-on-dark {
+    color: var(--color-text-on-dark);
+}
+
+.text-on-brand {
+    color: var(--color-text-on-brand);
+}
+
+.uppercase {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+}
+
+.label-xs {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-text-muted);
+}
+
+
+/* ─────────────────────────────────────────
+   6. SEMANTIC HEADINGS
+   ───────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    line-height: var(--leading-tight);
+    letter-spacing: var(--tracking-tight);
+    color: var(--color-text-primary);
+}
+
+h1 {
+    font-size: var(--text-5xl);
+}
+
+h2 {
+    font-size: var(--text-4xl);
+}
+
+h3 {
+    font-size: var(--text-3xl);
+}
+
+h4 {
+    font-size: var(--text-2xl);
+}
+
+h5 {
+    font-size: var(--text-xl);
+}
+
+h6 {
+    font-size: var(--text-lg);
+}
+
+
+/* ─────────────────────────────────────────
+   7. LAYOUT UTILITIES
+   ───────────────────────────────────────── */
+.container {
+    width: 100%;
+    max-width: var(--container-lg);
+    margin-inline: auto;
+    padding-inline: var(--space-6);
+}
+
+.container-sm {
+    max-width: var(--container-sm);
+}
+
+.container-md {
+    max-width: var(--container-md);
+}
+
+.container-xl {
+    max-width: var(--container-xl);
+}
+
+.container-2xl {
+    max-width: var(--container-2xl);
+}
+
+.section {
+    padding-block: var(--space-16);
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.stack-2 {
+    gap: var(--space-2);
+}
+
+.stack-4 {
+    gap: var(--space-4);
+}
+
+.stack-6 {
+    gap: var(--space-6);
+}
+
+.stack-8 {
+    gap: var(--space-8);
+}
+
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.cluster-2 {
+    gap: var(--space-2);
+}
+
+.cluster-4 {
+    gap: var(--space-4);
+}
+
+.cluster-6 {
+    gap: var(--space-6);
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-6);
+}
+
+.grid-auto {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-6);
+}
+
+
+/* ─────────────────────────────────────────
+   8. SURFACE CLASSES
+   ───────────────────────────────────────── */
+.surface {
+    background: var(--color-bg-surface);
+}
+
+.surface-elevated {
+    background: var(--color-bg-elevated);
+}
+
+.surface-sunken {
+    background: var(--color-bg-sunken);
+}
+
+.surface-dark {
+    background: var(--color-bg-dark);
+}
+
+.surface-brand {
+    background: var(--color-bg-brand);
+}
+
+
+/* ─────────────────────────────────────────
+   9. CARD
+   ───────────────────────────────────────── */
+.card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    transition: box-shadow var(--duration-normal) var(--ease-default),
+        transform var(--duration-normal) var(--ease-default);
+}
+
+.card-sm {
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+}
+
+.card-lg {
+    padding: var(--space-8);
+    border-radius: var(--radius-2xl);
+}
+
+.card-dark {
+    background: var(--color-bg-dark);
+    border-color: var(--color-border-dark);
+    color: var(--color-text-on-dark);
+}
+
+.card-brand {
+    background: var(--color-bg-brand);
+    border-color: transparent;
+    color: var(--color-text-on-brand);
+}
+
+.card-hoverable:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+
+/* ─────────────────────────────────────────
+   10. BUTTONS
+   ───────────────────────────────────────── */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-6);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    font-weight: var(--weight-semibold);
+    line-height: 1;
+    border-radius: var(--radius-pill);
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background var(--duration-fast) var(--ease-default),
+        color var(--duration-fast) var(--ease-default),
+        box-shadow var(--duration-fast) var(--ease-default),
+        transform var(--duration-fast) var(--ease-spring);
+    white-space: nowrap;
+    user-select: none;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* Primary — Yellow */
+.btn-primary {
+    background: var(--color-bg-brand);
+    color: var(--color-text-on-brand);
+    border-color: var(--color-bg-brand);
+    box-shadow: var(--shadow-brand);
+}
+
+.btn-primary:hover {
+    background: var(--color-bg-brand-hover);
+    border-color: var(--color-bg-brand-hover);
+    box-shadow: var(--shadow-brand), 0 2px 8px rgba(0, 0, 0, 0.12);
+    text-decoration: none;
+}
+.select {
+    width: 100%;
+    min-height: 48px;
+    padding: 0 14px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border-default);
+    background: var(--color-bg-surface);
+    color: var(--color-text-primary);
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.select:focus {
+    outline: none;
+    border-color: var(--yellow-500);
+    box-shadow: 0 0 0 4px rgba(245, 216, 66, 0.15);
+}
+/* Secondary — Outlined */
+.btn-secondary {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-color: var(--color-border-strong);
+}
+
+.btn-secondary:hover {
+    background: var(--color-bg-elevated);
+    text-decoration: none;
+}
+
+/* Ghost */
+.btn-ghost {
+    background: transparent;
+    color: var(--color-text-secondary);
+    border-color: transparent;
+}
+
+.btn-ghost:hover {
+    background: var(--color-bg-elevated);
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+/* Dark */
+.btn-dark {
+    background: var(--choco-700);
+    color: var(--cream-100);
+    border-color: var(--choco-600);
+}
+
+.btn-dark:hover {
+    background: var(--choco-600);
+    text-decoration: none;
+}
+
+/* Sizes */
+.btn-sm {
+    padding: var(--space-2) var(--space-4);
+    font-size: var(--text-xs);
+}
+
+.btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--text-base);
+}
+
+.btn-xl {
+    padding: var(--space-5) var(--space-10);
+    font-size: var(--text-lg);
+}
+
+.btn-icon {
+    padding: var(--space-3);
+    border-radius: var(--radius-pill);
+}
+
+
+/* ─────────────────────────────────────────
+   11. BADGES & TAGS
+   ───────────────────────────────────────── */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 3px var(--space-3);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-semibold);
+    border-radius: var(--radius-pill);
+    letter-spacing: var(--tracking-wide);
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.badge-brand {
+    background: var(--yellow-100);
+    color: var(--yellow-700);
+}
+
+.badge-dark {
+    background: var(--choco-600);
+    color: var(--cream-100);
+}
+
+.badge-amber {
+    background: rgba(252, 168, 64, 0.18);
+    color: var(--amber-700);
+}
+
+.badge-terra {
+    background: rgba(232, 121, 90, 0.18);
+    color: var(--terracotta-700);
+}
+
+.badge-olive {
+    background: rgba(190, 188, 90, 0.18);
+    color: var(--olive-700);
+}
+
+.badge-success {
+    background: var(--color-success-bg);
+    color: var(--color-success-text);
+}
+
+.badge-danger {
+    background: var(--color-danger-bg);
+    color: var(--color-danger-text);
+}
+
+.badge-info {
+    background: var(--color-info-bg);
+    color: var(--color-info-text);
+}
+
+/* Category dot tag */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: var(--space-1) var(--space-3);
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    border-radius: var(--radius-md);
+    background: var(--color-bg-elevated);
+    color: var(--color-text-secondary);
+    border: 1px solid var(--color-border-default);
+}
+
+.tag.active {
+    background: var(--color-bg-brand);
+    color: var(--color-text-on-brand);
+    border-color: var(--color-bg-brand);
+}
+
+
+/* ─────────────────────────────────────────
+   12. FORM ELEMENTS
+   ───────────────────────────────────────── */
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-body);
+    font-size: var(--text-sm);
+    color: var(--color-text-primary);
+    background: var(--color-bg-surface);
+    border: 1.5px solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    outline: none;
+    transition: border-color var(--duration-fast) var(--ease-default),
+        box-shadow var(--duration-fast) var(--ease-default);
+    line-height: var(--leading-normal);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: var(--color-text-hint);
+}
+
+.input:hover,
+.select:hover,
+.textarea:hover {
+    border-color: var(--color-border-strong);
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    border-color: var(--yellow-400);
+    box-shadow: 0 0 0 3px rgba(245, 216, 66, 0.25);
+}
+
+.input-dark {
+    background: var(--choco-600);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--cream-100);
+}
+
+.input-dark::placeholder {
+    color: var(--sand-500);
+}
+
+.input-dark:focus {
+    border-color: var(--yellow-400);
+    box-shadow: 0 0 0 3px rgba(245, 216, 66, 0.15);
+}
+
+.label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.field-hint {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    margin-top: var(--space-1);
+}
+
+.field-error {
+    font-size: var(--text-xs);
+    color: var(--color-danger-text);
+    margin-top: var(--space-1);
+}
+
+/* Checkbox & Radio */
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+}
+
+.checkbox input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--yellow-500);
+}
+.checkbox,
+.radio {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    font-size: var(--text-sm);
+}
+
+.checkbox input[type="checkbox"],
+.radio input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--yellow-400);
+    cursor: pointer;
+}
+
+
+/* ─────────────────────────────────────────
+   13. NAVIGATION
+   ───────────────────────────────────────── */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-bg-surface);
+    border-bottom: 1px solid var(--color-border-default);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+}
+
+.navbar-brand {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: var(--weight-bold);
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.navbar-dark {
+    background: var(--choco-800);
+    border-bottom-color: var(--color-border-dark);
+}
+
+.navbar-brand-yellow {
+    color: var(--yellow-300);
+}
+
+.nav-link {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: color var(--duration-fast), background var(--duration-fast);
+}
+
+.nav-link:hover {
+    color: var(--color-text-primary);
+    background: var(--color-bg-elevated);
+    text-decoration: none;
+}
+
+.nav-link.active {
+    color: var(--yellow-500);
+    background: var(--color-bg-brand-soft);
+}
+
+
+/* ─────────────────────────────────────────
+   14. DIVIDER
+   ───────────────────────────────────────── */
+.divider {
+    height: 1px;
+    background: var(--color-border-default);
+    border: none;
+    margin-block: var(--space-6);
+}
+
+.divider-dark {
+    background: var(--color-border-dark);
+}
+
+
+/* ─────────────────────────────────────────
+   15. STAT / METRIC CARD
+   ───────────────────────────────────────── */
+.stat-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-6);
+}
+
+.stat-card-dark {
+    background: var(--choco-600);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: var(--text-4xl);
+    font-weight: var(--weight-bold);
+    color: var(--yellow-400);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: var(--text-xs);
+    font-weight: var(--weight-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
+}
+
+
+/* ─────────────────────────────────────────
+   16. AVATAR
+   ───────────────────────────────────────── */
+.avatar {
+    border-radius: var(--radius-pill);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.avatar-sm {
+    width: 28px;
+    height: 28px;
+}
+
+.avatar-md {
+    width: 40px;
+    height: 40px;
+}
+
+.avatar-lg {
+    width: 56px;
+    height: 56px;
+}
+
+.avatar-xl {
+    width: 80px;
+    height: 80px;
+}
+
+.avatar-initials {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-pill);
+    background: var(--yellow-100);
+    color: var(--yellow-700);
+    font-family: var(--font-display);
+    font-weight: var(--weight-bold);
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+}
+
+
+/* ─────────────────────────────────────────
+   17. TOAST / ALERT
+   ───────────────────────────────────────── */
+.alert {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-5);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-sm);
+    border: 1px solid;
+}
+
+.alert-success {
+    background: var(--color-success-bg);
+    color: var(--color-success-text);
+    border-color: var(--color-success-border);
+}
+
+.alert-danger {
+    background: var(--color-danger-bg);
+    color: var(--color-danger-text);
+    border-color: var(--color-danger-border);
+}
+
+.alert-info {
+    background: var(--color-info-bg);
+    color: var(--color-info-text);
+    border-color: var(--color-info-border);
+}
+
+.alert-warning {
+    background: var(--color-warning-bg);
+    color: var(--color-warning-text);
+    border-color: var(--color-warning-border);
+}
+
+
+/* ─────────────────────────────────────────
+   18. SKELETON LOADER
+   ───────────────────────────────────────── */
+@keyframes skeleton-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.skeleton {
+    background: var(--color-border-default);
+    border-radius: var(--radius-md);
+    animation: skeleton-pulse 1.6s var(--ease-default) infinite;
+}
+
+.skeleton-text {
+    height: 1em;
+    width: 100%;
+}
+
+.skeleton-title {
+    height: 1.5em;
+    width: 60%;
+}
+
+.skeleton-avatar {
+    border-radius: var(--radius-pill);
+}
+
+
+/* ─────────────────────────────────────────
+   19. UTILITY HELPERS
+   ───────────────────────────────────────── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.break-words {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.rounded-sm {
+    border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+    border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+    border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+
+.rounded-full {
+    border-radius: var(--radius-pill);
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+    box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
+
+.transition-fast {
+    transition: all var(--duration-fast) var(--ease-default);
+}
+
+.transition-normal {
+    transition: all var(--duration-normal) var(--ease-default);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.no-select {
+    user-select: none;
+}
+
+
+/* ─────────────────────────────────────────
+   20. RESPONSIVE BREAKPOINTS
+   ───────────────────────────────────────── */
+/*
+  Use these as reference in your own media queries:
+
+  sm:  @media (min-width: 540px)   — large phones
+  md:  @media (min-width: 768px)   — tablets
+  lg:  @media (min-width: 1024px)  — small desktops
+  xl:  @media (min-width: 1280px)  — large desktops
+  2xl: @media (min-width: 1536px)  — wide screens
+*/
+
+@media (max-width: 768px) {
+
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: var(--text-4xl);
+    }
+
+    h2 {
+        font-size: var(--text-3xl);
+    }
+
+    h3 {
+        font-size: var(--text-2xl);
+    }
+
+    .section {
+        padding-block: var(--space-10);
+    }
+
+    .container {
+        padding-inline: var(--space-4);
+    }
+}
+
+@media (max-width: 540px) {
+    h1 {
+        font-size: var(--text-3xl);
+    }
+
+    h2 {
+        font-size: var(--text-2xl);
+    }
+
+    .btn-xl {
+        padding: var(--space-4) var(--space-6);
+        font-size: var(--text-base);
+    }
+}
