@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaGraduationCap, FaCode } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaGraduationCap } from "react-icons/fa";
 
 function TeamCard({ member }) {
     const initials = member?.name
