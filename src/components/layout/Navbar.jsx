@@ -42,7 +42,7 @@ function Navbar() {
             <div className="app-navbar__inner">
 
                 <NavLink to="/" className="navbar-brand-yellow" onClick={() => setMenuOpen(false)}>
-                    Ventara
+                    UtsavHub
                 </NavLink>
 
                 <button
