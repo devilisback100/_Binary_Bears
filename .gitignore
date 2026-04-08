@@ -1,22 +1,53 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# =========================
+# Dependencies
+# =========================
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# =========================
+# Production build
+# =========================
+/build
+/dist
+
+# =========================
+# Testing
+# =========================
 /coverage
 
-# production
-/build
+# =========================
+# Environment variables (CRITICAL)
+# =========================
+.env
+.env.*
+!.env.example   # allow example file
 
-# misc
+# =========================
+# Logs
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
+# =========================
+# OS / System files
+# =========================
 .DS_Store
-# Ignore all .env files and variants
-.env*
-# Ignore sensitive config files
+Thumbs.db
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Sensitive files
+# =========================
 *.key
 *.pem
 *.crt
@@ -25,6 +56,8 @@
 secrets.*
 config.local.*
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+# =========================
+# Misc
+# =========================
+.cache/
+.tmp/
