@@ -1,0 +1,42 @@
+export const LEADERBOARD_FALLBACK = [
+    {
+        id: "1",
+        name: "Aarav Sharma",
+        role: "Member",
+        score: 120,
+        solved: 8,
+        streak: 5,
+    },
+    {
+        id: "2",
+        name: "Priya Verma",
+        role: "Core",
+        score: 110,
+        solved: 7,
+        streak: 4,
+    },
+    {
+        id: "3",
+        name: "Rahul Singh",
+        role: "Lead",
+        score: 95,
+        solved: 6,
+        streak: 3,
+    },
+    {
+        id: "4",
+        name: "Sneha Patel",
+        role: "Member",
+        score: 88,
+        solved: 5,
+        streak: 2,
+    },
+    {
+        id: "5",
+        name: "Karan Mehta",
+        role: "Member",
+        score: 76,
+        solved: 4,
+        streak: 2,
+    },
+];

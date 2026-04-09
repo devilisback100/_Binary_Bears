@@ -11,6 +11,9 @@ import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import { AuthProvider } from "./context/AuthContext";
+import ChallengesPage from "./pages/ChallengesPage";
+import ChallengeDetailsPage from "./pages/ChallengeDetailsPage";
+import LeaderboardPage from "./pages/LeaderboardPage";
 
 function App() {
   return (
@@ -24,6 +27,9 @@ function App() {
             <Route path="/events/:id" element={<EventDetailPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/projects/:id" element={<ProjectDetailPage />} />
+            <Route path="/challenges" element={<ChallengesPage />} />
+            <Route path="/challenges/:id" element={<ChallengeDetailsPage />} />
+            <Route path="/leaderboard" element={<LeaderboardPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
             <Route path="*" element={<NotFoundPage />} />

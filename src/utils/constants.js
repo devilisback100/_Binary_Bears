@@ -6,6 +6,8 @@ export const NAV_LINKS = [
     { label: "Team", path: "/team" },
     { label: "Events", path: "/events" },
     { label: "Projects", path: "/projects" },
+    { label: "Challenges", path: "/challenges" },
+    { label: "Leaderboard", path: "/leaderboard" },
 ];
 
 export const EVENT_TYPES = [
@@ -15,3 +17,15 @@ export const EVENT_TYPES = [
 ];
 
 export const TEAM_ROLE_OPTIONS = ["All", "Lead", "Core", "Member"];
+
+export const CHALLENGE_DIFFICULTY_OPTIONS = [
+    { label: "All", value: "" },
+    { label: "Easy", value: "easy" },
+    { label: "Medium", value: "medium" },
+    { label: "Hard", value: "hard" },
+];
+
+export const LEADERBOARD_TYPES = [
+    { label: "Global", value: "global" },
+    { label: "Challenge", value: "challenge" },
+];

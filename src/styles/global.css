@@ -415,3 +415,24 @@ body {
         gap: 0.6rem;
     }
 }
+.leaderboard-row__grid {
+    display: grid;
+    grid-template-columns: 100px 1.8fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.leaderboard-metric {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .leaderboard-row__grid {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .leaderboard-metric {
+        text-align: left;
+    }
+}
