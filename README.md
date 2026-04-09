@@ -1,4 +1,4 @@
-# Ventara — Club Platform
+# UtsavHub — Club Platform
 
 > A modern digital home for teams, events, and student projects.
 
@@ -6,9 +6,9 @@
 
 ---
 
-## What is Ventara?
+## What is UtsavHub?
 
-Ventara is a full-featured club platform built by Binary Bears for WebWeave. It gives clubs a polished space to manage their team directory, run events, and showcase projects — all in one place.
+UtsavHub is a full-featured club platform built by Binary Bears for WebWeave. It gives clubs a polished space to manage their team directory, run events, and showcase projects — all in one place.
 
 ---
 
@@ -60,8 +60,8 @@ src/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/your-org/ventara.git
-cd ventara
+git clone https://github.com/your-org/UtsavHub.git
+cd UtsavHub
 
 # 2. Install dependencies
 npm install
